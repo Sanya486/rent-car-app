@@ -1,11 +1,25 @@
-import React from 'react'
+import { AppBar, CssBaseline, Toolbar, Typography } from '@mui/material';
+import React from 'react';
+import css from './Header.module.css'
 
 const Header = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <CssBaseline />
+      <AppBar component='nav'>
+        <Toolbar>
+          <Typography
+            variant='h6'
+            component='div'
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            WroomTheCar
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <div className={css.holder}></div>
+    </>
+  );
+};
 
-export default Header
+export default Header;
