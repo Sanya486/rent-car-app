@@ -23,12 +23,12 @@ Make sure you have the following installed on your machine:
 ### Installation
 1. Clone the repository: 
    ```bash
-   git clone https://github.com/your-username/wroom-the-car.git
+   git clone https://github.com/Sanya486/rent-car-app.git
    ```
 
 2. Navigate to the project folder:
    ```bash
-   cd wroom-the-car
+   cd rent-car-app
    ```
 
 3. Install dependencies:
