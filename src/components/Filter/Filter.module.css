@@ -1,0 +1,159 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  justify-content: center;
+}
+
+.filter label {
+  color: #8a8a89;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 128.571%;
+}
+
+.filter input {
+  margin-top: 8px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: #f7f7fb;
+  color: #121417;
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 111.111%;
+  outline-color: #3470ff;
+}
+
+.filter .iconPadding {
+  padding-right: 38px;
+}
+
+.carBrand {
+  width: 224px;
+}
+
+.price {
+  width: 125px;
+}
+
+.mileage {
+  width: 245px;
+}
+
+.mileageWrap {
+  display: flex;
+}
+
+.filter .from {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.filter .from::-webkit-outer-spin-button,
+.filter .from::-webkit-inner-spin-button,
+.filter .to::-webkit-outer-spin-button,
+.filter .to::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter .to {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 2px solid #8a8a8933;
+}
+
+.btn {
+  display: flex;
+  width: 136px;
+  height: 48px;
+  padding: 14px 44px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 12px;
+  background: #3470ff;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 142.857%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 22px;
+  right: 18px;
+  stroke: #121417;
+  fill: transparent;
+}
+
+.brandDropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 272px;
+  padding: 14px 8px 14px 18px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(18, 20, 23, 0.05);
+  background: #fff;
+  box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+}
+
+.brandDropdown ul li p {
+  color: rgba(18, 20, 23, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 125%;
+}
+
+.scroll {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scroll::-webkit-scrollbar {
+  margin-top: 14px;
+  width: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  display: none;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(18, 20, 23, 0.05);
+}
+
+.scroll::-webkit-scrollbar-corner {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mileage {
+    width: 245px;
+  }
+  .filter {
+    flex-direction: row;
+    gap: 18px;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .mileage {
+    width: 320px;
+  }
+}

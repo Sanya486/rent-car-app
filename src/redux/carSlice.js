@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchAllCars } from './operations';
 
-const handlePending = (state) => {
-  state.isLoading = true;
-};
+// const handlePending = (state) => {
+//   state.isLoading = true;
+// };
 
-const handleReject = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
+// const handleReject = (state, action) => {
+//   state.isLoading = false;
+//   state.error = action.payload;
+// };
 
 export const carSlice = createSlice({
   name: 'cars',

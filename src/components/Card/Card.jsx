@@ -1,63 +1,62 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectAdverts } from '../../redux/selectors';
 import css from './Card.module.css';
 import sprite from '../../images/sprite.svg';
 
-const Card = () => {
-  const adverts = useSelector(selectAdverts);
+const Card = ({ advert, key }) => {
+  const adressArray = advert.address.split(',');
+  const country = adressArray[2];
+  const city = adressArray[1];
+
   return (
-    adverts && (
-      <div className={css.card}>
+    advert && (
+      <li key={key} className={css.card}>
         <div className={css.photoWrapper}>
-          <img
-            className={css.photo}
-            src={adverts[32].img}
-            alt={adverts[0].make}
-          />
+          <img className={css.photo} src={advert.img} alt={advert.make} />
         </div>
         <div className={css.titleWrapper}>
-          <p>
-            <span>{adverts[0].make} </span>
-            <span className={css.model}>{adverts[0].model} </span>
-            <span>{adverts[0].year}</span>
+          <p className={css.firstPart}>
+            <span>{advert.make} </span>
+            <span className={css.model}>{advert.model} </span>
+            <span>{advert.year}</span>
           </p>
-          <p>{adverts[0].rentalPrice}</p>
+          <p>{advert.rentalPrice}</p>
         </div>
         <div className={css.descriptionWrapper}>
           <div className={css.RowOfDesc}>
-            <span>Odessa</span>
+            <span>{city}</span>
             <svg className={css.verticalBar}>
               <use href={sprite + '#icon-vertical-bar'}></use>
             </svg>
-            <span>Ukraine</span>
+            <span>{country}</span>
             <svg className={css.verticalBar}>
               <use href={sprite + '#icon-vertical-bar'}></use>
             </svg>
-            <span>Luxury Car Rental</span>
+            <span>{advert.rentalCompany}</span>
             <svg className={css.verticalBar}>
               <use href={sprite + '#icon-vertical-bar'}></use>
             </svg>
             <span>Premium</span>
           </div>
           <div className={css.RowOfDesc}>
-            <span>Suv</span>
+            <span>{advert.type}</span>
             <svg className={css.verticalBar}>
               <use href={sprite + '#icon-vertical-bar'}></use>
             </svg>
-            <span>Enclave</span>
+            <span>{advert.model}</span>
             <svg className={css.verticalBar}>
               <use href={sprite + '#icon-vertical-bar'}></use>
             </svg>
-            <span>9582</span>
+            <span>{advert.id}</span>
             <svg className={css.verticalBar}>
               <use href={sprite + '#icon-vertical-bar'}></use>
             </svg>
-            <span>Power liftgate</span>
+            <span>{advert.functionalities[0]}</span>
           </div>
         </div>
-        <button className={css.btn} type='button'>Learn more</button>
-      </div>
+        <button className={css.btn} type='button'>
+          Learn more
+        </button>
+      </li>
     )
   );
 };

@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    column-gap: 29px;
+    row-gap: 50px;
+  }
+}

@@ -1,10 +1,12 @@
 import React from 'react'
-import Card from '../../components/Card/Card'
+import CardList from '../../components/CardList/CardList'
+import Filter from '../../components/Filter/Filter'
 
 const CatalogPage = () => {
   return (
-    <div>
-      <Card/>
+    <div className='container'>
+      <Filter/>
+      <CardList/>
     </div>
   )
 }
