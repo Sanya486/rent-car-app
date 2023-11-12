@@ -1,17 +1,53 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import css from './Card.module.css';
 import sprite from '../../images/sprite.svg';
+import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavorite, removeFromFavorite } from '../../redux/carSlice';
+import { selectFavorites } from '../../redux/selectors';
 
 const Card = ({ advert, key }) => {
+  const dispatch = useDispatch();
   const adressArray = advert.address.split(',');
   const country = adressArray[2];
   const city = adressArray[1];
+  let firstRender = useRef(true);
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const favorites = useSelector(selectFavorites)
+
+  useEffect(() => {
+    const isCurrentFavorite = favorites.find((id) => id === advert.id);
+    if (isCurrentFavorite) setIsFavorite(true);
+  }, [favorites, advert.id]);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    if (isFavorite) {
+      dispatch(addToFavorite(advert.id));
+    } else if (!isFavorite) {
+      dispatch(removeFromFavorite(advert.id));
+    }
+  }, [isFavorite, dispatch, advert.id]);
 
   return (
     advert && (
       <li key={key} className={css.card}>
         <div className={css.photoWrapper}>
           <img className={css.photo} src={advert.img} alt={advert.make} />
+          <svg
+            className={clsx(
+              !isFavorite && css.iconHeart,
+              isFavorite && css.iconHeartFavorite
+            )}
+            onClick={() => setIsFavorite((prev) => !prev)}
+          >
+            <use href={sprite + '#icon-heart'}></use>
+          </svg>
         </div>
         <div className={css.titleWrapper}>
           <p className={css.firstPart}>
