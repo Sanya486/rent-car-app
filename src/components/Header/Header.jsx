@@ -14,7 +14,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, NavLink } from 'react-router-dom';
-import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 
 const drawerWidth = 240;
 const navItems = [
