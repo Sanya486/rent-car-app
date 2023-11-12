@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import css from './Filter.module.css';
 import sprite from '../../images/sprite.svg';
+import { useDispatch } from 'react-redux';
+import { fetchFilteredCars } from '../../redux/operations';
 
 const makes = [
   'Buick',
@@ -33,6 +35,8 @@ for (let i = 30; i <= 500; i += 10) {
 }
 
 const Filter = () => {
+  const dispatch = useDispatch()
+
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [isPricedOpen, setIsPriceOpen] = useState(false);
 
@@ -41,7 +45,18 @@ const Filter = () => {
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    if (!brand) {
+      return
+    }
+    const filterObj = {
+      brand,
+      price,
+      mileageFrom,
+      mileageTo,
+    };
+    dispatch(fetchFilteredCars(filterObj))
+  };
 
   return (
     <div className={css.filter}>

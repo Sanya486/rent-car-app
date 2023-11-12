@@ -1,42 +1,49 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './Card.module.css';
 import sprite from '../../images/sprite.svg';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorite, removeFromFavorite } from '../../redux/carSlice';
 import { selectFavorites } from '../../redux/selectors';
+import Modal from '../Modal/Modal';
+import { createPortal } from 'react-dom';
 
 const Card = ({ advert, key }) => {
   const dispatch = useDispatch();
   const adressArray = advert.address.split(',');
   const country = adressArray[2];
   const city = adressArray[1];
-  let firstRender = useRef(true);
 
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const favorites = useSelector(selectFavorites)
+  if (isModalOpen) {
+    window.document.body.style.overflow = 'hidden'
+  } else {
+    window.document.body.style.overflow = 'auto';
+  }
+
+  const favorites = useSelector(selectFavorites);
 
   useEffect(() => {
-    const isCurrentFavorite = favorites.find((id) => id === advert.id);
+    const isCurrentFavorite = favorites.find(
+      (favorite) => favorite.id === advert.id
+    );
     if (isCurrentFavorite) setIsFavorite(true);
   }, [favorites, advert.id]);
 
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
+  const handleFavorite = () => {
+    if (!isFavorite) {
+      dispatch(addToFavorite(advert));
+      setIsFavorite(true);
+    } else {
+      dispatch(removeFromFavorite(advert));
+      setIsFavorite(false);
     }
-    if (isFavorite) {
-      dispatch(addToFavorite(advert.id));
-    } else if (!isFavorite) {
-      dispatch(removeFromFavorite(advert.id));
-    }
-  }, [isFavorite, dispatch, advert.id]);
-
+  };
   return (
     advert && (
-      <li key={key} className={css.card}>
+      <div key={key} className={css.card}>
         <div className={css.photoWrapper}>
           <img className={css.photo} src={advert.img} alt={advert.make} />
           <svg
@@ -44,7 +51,7 @@ const Card = ({ advert, key }) => {
               !isFavorite && css.iconHeart,
               isFavorite && css.iconHeartFavorite
             )}
-            onClick={() => setIsFavorite((prev) => !prev)}
+            onClick={handleFavorite}
           >
             <use href={sprite + '#icon-heart'}></use>
           </svg>
@@ -89,10 +96,23 @@ const Card = ({ advert, key }) => {
             <span>{advert.functionalities[0]}</span>
           </div>
         </div>
-        <button className={css.btn} type='button'>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className={css.btn}
+          type='button'
+        >
           Learn more
         </button>
-      </li>
+        {isModalOpen &&
+          createPortal(
+            <Modal
+              advert={advert}
+              city={city}
+              country={country}
+              setIsModalOpen={setIsModalOpen}
+            />, document.getElementById('modal')
+          )}
+      </div>
     )
   );
 };

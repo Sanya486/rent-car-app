@@ -7,6 +7,14 @@ h3, h4, h5, h6, p {
   margin: 0;
 }
 
+a{
+   text-decoration: none;
+}
+
+.active button{
+ border-bottom: 1px solid white;
+}
+
 ul{
   list-style: none;
   padding: 0;
@@ -21,6 +29,7 @@ img{
   max-width: 320px;
   margin: 0px auto;
   padding: 16px;
+  padding-bottom: 150px;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,7 +40,7 @@ img{
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
      padding-left: 128px;

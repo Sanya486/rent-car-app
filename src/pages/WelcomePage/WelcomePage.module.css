@@ -1,4 +1,42 @@
-.welcome {
+ /* .welcome {
+  height: 100vh;
+} */
+
+wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subtitle{
+
+    font-weight: 400; 
+    font-size: 1.5em; 
+    color: #666; 
+    margin-bottom: 20px; 
+}
+
+.title{
+
+    font-weight: 700; 
+    font-size: 30px; 
+    color: #333;
+    margin-bottom: 10px; 
+}
+
+.description{
+  text-align: left;
+    font-weight: 400; 
+    font-size: 1em; 
+    color: #777; 
+    line-height: 1.5; 
+    margin-bottom: 30px; 
+}
+
+@media screen and (min-width: 768px) {
+ .welcome {
   height: 100vh;
 }
 
@@ -10,28 +48,12 @@
   align-items: center;
 }
 
-.subtitle{
-font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Use the regular variant */
-    font-size: 1.5em; /* Adjust the size as needed */
-    color: #666; /* Set your desired color */
-    margin-bottom: 20px; /* Add more space below the subtitle */
-}
-
 .title{
-  font-family: 'Roboto', sans-serif;
-    font-weight: 700; /* Use the bold variant */
-    font-size: 90px; /* Adjust the size as needed */
-    color: #333; /* Set your desired color */
-    margin-bottom: 10px; /* Add some space below the title */
+
+    font-weight: 700; 
+    font-size: 90px; 
+    color: #333;
+    margin-bottom: 10px; 
 }
 
-.description{
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Use the regular variant */
-    font-size: 1em; /* Adjust the size as needed */
-    color: #777; /* Set your desired color */
-    line-height: 1.5; /* Adjust the line height for better readability */
-    margin-bottom: 30px; /* Add more space below the description */
 }
