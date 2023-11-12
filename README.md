@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Wroom The Car
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Wroom The Car, a React web application that simplifies the process of renting cars. Whether you're looking for a quick city drive or planning an adventurous road trip, Wroom The Car has you covered. The app features a user-friendly interface with three main pages: Welcome, Catalog, and Favorites.
 
-## Available Scripts
+## Table of Contents
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Features](#features)
+  - [Welcome Page](#welcome-page)
+  - [Catalog](#catalog)
+  - [Favorites](#favorites)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+### Prerequisites
+Make sure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (which includes npm)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+1. Clone the repository: 
+   ```bash
+   git clone https://github.com/your-username/wroom-the-car.git
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project folder:
+   ```bash
+   cd wroom-the-car
+   ```
 
-### `npm test`
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Start the application:
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
+This will launch the app in your default web browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Welcome Page
+The Welcome Page provides an introduction to Wroom The Car. Users can find essential information about the app and its features.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Catalog
+Browse through a variety of car advertisements in the Catalog. Filter by preferences, view details, and choose the perfect car for your needs.
 
-### `npm run eject`
+### Favorites
+Save your preferred car advertisements in the Favorites page. Easily access and compare your favorite choices for a seamless rental experience.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
+1. Navigate to the Welcome Page to get an overview of the app.
+2. Explore the Catalog to find available car advertisements.
+3. Click on an advertisement to view more details.
+4. Add preferred advertisements to your Favorites for quick access.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, feel free to submit a pull request. For major changes, please open an issue first to discuss the proposed changes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy driving with Wroom The Car! 🚗💨
