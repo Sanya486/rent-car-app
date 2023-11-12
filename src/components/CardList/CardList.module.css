@@ -26,6 +26,10 @@
   text-decoration-line: underline;
 }
 
+.loadMore:hover{
+  color: #0B44CD;
+}
+
 @media screen and (min-width: 768px) {
   .wrapper {
     flex-direction: row;

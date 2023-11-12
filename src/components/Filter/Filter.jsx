@@ -3,6 +3,7 @@ import css from './Filter.module.css';
 import sprite from '../../images/sprite.svg';
 import { useDispatch } from 'react-redux';
 import { fetchFilteredCars } from '../../redux/operations';
+import toast from 'react-hot-toast';
 
 const makes = [
   'Buick',
@@ -47,6 +48,7 @@ const Filter = () => {
 
   const handleSubmit = () => {
     if (!brand) {
+      toast.error('Car brand is required!')
       return
     }
     const filterObj = {
